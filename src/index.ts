@@ -20,9 +20,11 @@ resetButton.addEventListener("click", () => {
 });
 
 document.addEventListener("keydown", (e: KeyboardEvent) => {
-  const letter = e.key.toUpperCase();
-  if (letter.charCodeAt(0) >= 65 && letter.charCodeAt(0) <= 90)
-    hangmanGame.checkLetter(letter);
+  if (
+    (e.keyCode >= 65 && e.keyCode <= 90) ||
+    (e.keyCode >= 97 && e.keyCode <= 122)
+  )
+    hangmanGame.checkLetter(e.key.toUpperCase());
 });
 
 window.addEventListener("resize", () => {

@@ -74,7 +74,9 @@ class UI {
       .join("");
 
     messageContent.innerHTML = `
-      <h1 class="message__title">${success ? "You win" : "You lost"}!</h1>
+      <h1 class="message__title"><span class="text__gradient">${
+        success ? "You win" : "You lost"
+      }!</span></h1>
       <p class="message__text"><span class="text--light">The word:</span> ${wordString}</p>
     `;
 

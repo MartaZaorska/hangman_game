@@ -38,6 +38,7 @@ class Game {
     const letterUsedIndex = this.lettersUsed.findIndex(
       (item: string) => item === letter
     );
+
     if (letterUsedIndex >= 0) return;
 
     const keyCode = letter.charCodeAt(0);
