@@ -1,4 +1,4 @@
-import { DRAW_ELEMENTS } from "../constants";
+import { DRAW_ELEMENTS, KEYBOARD } from "../constants";
 import { Letter } from "../types";
 
 class UI {
@@ -81,6 +81,19 @@ class UI {
     `;
 
     messageElement.classList.add("message--active");
+  }
+
+  public static createKeyboard(): void {
+    const keyboardContent = document.querySelector(".keyboard__content")!;
+    keyboardContent.innerHTML = "";
+    KEYBOARD.forEach((item: string) => {
+      keyboardContent.innerHTML +=
+        item === " "
+          ? "<br />"
+          : `
+        <span class="keyboard__item">${item}</span>
+      `;
+    });
   }
 }
 

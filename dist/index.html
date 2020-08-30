@@ -13,7 +13,6 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <input id="virtual-input" type="text" class="input--hide" />
     <div class="message">
       <div class="message__wrapper">
         <div class="message__content"></div>
@@ -35,7 +34,13 @@
         <canvas id="canvas"></canvas>
       </section>
     </main>
-    <button id="keyboard" class="button--round">
+    <div class="keyboard">
+      <button id="keyboard-close" class="keyboard__button--close">
+        &times;
+      </button>
+      <div class="keyboard__content"></div>
+    </div>
+    <button id="keyboard-open" class="keyboard__button">
       <i class="far fa-keyboard"></i>
     </button>
     <script src="bundle.js"></script>
