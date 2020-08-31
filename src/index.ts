@@ -9,14 +9,28 @@ const keyboardElement = document.querySelector(".keyboard")!;
 
 let hangmanGame: Game;
 
-function init() {
-  hangmanGame = new Game();
-  UI.createKeyboard();
+// servicer worker
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker
+      .register("./serviceWorker.js")
+      .then((reg) => console.log("Service Worker: Registered"))
+      .catch((err) => console.log("Service Worker: Error"));
+  });
 }
 
 function keyboardHandler(keyCode: number): void {
   if ((keyCode >= 65 && keyCode <= 90) || (keyCode >= 97 && keyCode <= 122))
     hangmanGame.checkLetter(String.fromCharCode(keyCode).toUpperCase());
+}
+
+function keyboardToggle(): void {
+  keyboardElement.classList.toggle("keyboard--active");
+}
+
+function init() {
+  hangmanGame = new Game();
+  UI.createKeyboard();
 }
 
 startButton.addEventListener("click", () => {
@@ -29,13 +43,8 @@ resetButton.addEventListener("click", () => {
   messageElement.classList.remove("message--active");
 });
 
-closeKeyboard.addEventListener("click", () => {
-  keyboardElement.classList.remove("keyboard--active");
-});
-
-openKeyboard.addEventListener("click", () => {
-  keyboardElement.classList.add("keyboard--active");
-});
+closeKeyboard.addEventListener("click", keyboardToggle);
+openKeyboard.addEventListener("click", keyboardToggle);
 
 keyboardElement.addEventListener("click", (e) => {
   const target = e.target as HTMLElement;

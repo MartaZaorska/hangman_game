@@ -1,5 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;600&display=swap");
-
+@import url(https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;600&display=swap);
 :root {
   --lightGray: #efefef;
   --white: #ffffff;
@@ -10,7 +9,6 @@
   --green: #96e6a1;
   --gradient: linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%);
 }
-
 * {
   margin: 0;
   padding: 0;
@@ -18,9 +16,8 @@
   box-sizing: border-box;
   -webkit-tap-highlight-color: transparent;
 }
-
 ::-webkit-scrollbar {
-  background: transparent;
+  background: 0 0;
   width: 15px;
 }
 ::-webkit-scrollbar-thumb {
@@ -32,9 +29,8 @@
   box-shadow: inset 0 0 15px 15px transparent;
   border: solid 5px transparent;
 }
-
 body {
-  font-family: "Quicksand", sans-serif;
+  font-family: Quicksand, sans-serif;
   font-size: 14px;
   font-display: fallback;
   width: 100%;
@@ -44,32 +40,29 @@ body {
   position: relative;
   background: var(--black);
 }
-
-input,
-select,
-input::placeholder,
+a,
 button,
-a {
-  background: transparent;
+input,
+input::placeholder,
+select {
+  background: 0 0;
   font-family: inherit;
   text-decoration: none;
   color: inherit;
-  outline: none;
+  outline: 0;
   -webkit-tap-highlight-color: transparent;
 }
-
+a:active,
+a:focus,
+button:active,
+button:focus,
 input:active,
 input:focus,
 select:active,
-select:focus,
-button:active,
-button:focus,
-a:active,
-a:focus {
-  outline: none;
+select:focus {
+  outline: 0;
   -webkit-tap-highlight-color: transparent;
 }
-
 .text__gradient {
   background: var(--gradient);
   background-clip: text;
@@ -77,11 +70,9 @@ a:focus {
   color: transparent;
   display: inline;
 }
-
 .text--light {
   font-weight: 300;
 }
-
 .main {
   width: 100%;
   height: auto;
@@ -92,30 +83,25 @@ a:focus {
   flex-direction: column;
   padding: 1em;
 }
-
 .hangman__canvas {
   width: 100%;
   height: 350px;
 }
-
 .hangman__content {
   width: 100%;
   height: auto;
 }
-
 .hangman__header {
-  margin: 0.5em 0em;
+  margin: 0.5em 0;
   text-align: center;
 }
-
 .hangman__title {
   font-size: 3.7em;
   font-weight: 300;
   margin-bottom: 0.3em;
 }
-
 .hangman__button {
-  margin: 1em 0em;
+  margin: 1em 0;
   font-size: 1.2em;
   border: 2px solid rgba(110, 110, 110, 0.3);
   border-radius: 1em;
@@ -124,24 +110,20 @@ a:focus {
   cursor: pointer;
   transition: all 0.1s;
 }
-
 .hangman__button:hover {
   background: rgba(110, 110, 110, 0.3);
   color: var(--green);
 }
-
 .hangman__word {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin: 0.7em 0em;
+  margin: 0.7em 0;
 }
-
 .word__space {
   width: 100%;
   height: 10px;
 }
-
 .word__letter {
   display: block;
   width: 25px;
@@ -150,21 +132,19 @@ a:focus {
   margin-bottom: 7px;
   border-bottom: 2px solid rgba(110, 110, 110, 0.4);
   border-radius: 1px;
-  color: rgb(193, 253, 193);
+  color: #c1fdc1;
   font-weight: 800;
   text-align: center;
   font-size: 1.4em;
 }
-
 .hangman__letters {
   text-align: center;
   padding: 0.4em;
-  margin: 0.5em 0em;
+  margin: 0.5em 0;
   font-size: 1.2em;
   font-weight: 600;
   line-height: 1.5;
 }
-
 .message {
   display: none;
   position: fixed;
@@ -178,33 +158,27 @@ a:focus {
   align-items: center;
   padding: 1em;
 }
-
 .message__wrapper {
   padding: 1.5em;
   background: var(--boxColor);
   border-radius: 1.2em;
   text-align: center;
 }
-
 .message__title {
   text-transform: uppercase;
   margin-bottom: 0.5em;
 }
-
 .message__text {
   font-size: 1.2em;
   font-weight: 600;
   line-height: 1.5;
 }
-
 .message .hangman__button {
   margin-bottom: 0.2em;
 }
-
 .message--active {
   display: flex;
 }
-
 .keyboard {
   position: fixed;
   z-index: 3;
@@ -214,22 +188,19 @@ a:focus {
   height: auto;
   background: var(--gradient);
   color: #444;
-  padding: 0.5em 0em;
+  padding: 0.5em 0;
   text-align: right;
   opacity: 0;
   transform: translateX(100%);
   transition: all 0.2s;
 }
-
 .keyboard--active {
   opacity: 1;
   transform: translateX(0);
 }
-
 .keyboard__content {
   text-align: center;
 }
-
 .keyboard__item {
   display: inline-block;
   padding: 0.3em;
@@ -239,18 +210,15 @@ a:focus {
   font-size: 1.2em;
   cursor: pointer;
 }
-
 .keyboard__item:hover {
   color: var(--black);
 }
-
 .keyboard__button--close {
   font-size: 1.6em;
   font-weight: 600;
   cursor: pointer;
   margin-right: 1em;
 }
-
 .keyboard__button {
   position: fixed;
   z-index: 2;
@@ -264,33 +232,27 @@ a:focus {
   border: 2px solid rgba(110, 110, 110, 0.3);
   transition: all 0.1s;
 }
-
 .keyboard__button i {
   pointer-events: none;
   font-size: 1.1em;
 }
-
 .keyboard__button:hover {
   background: rgba(110, 110, 110, 0.3);
   color: var(--green);
   cursor: pointer;
 }
-
 @media screen and (min-width: 600px) {
   body {
     font-size: 12px;
   }
-
   .main {
     flex-direction: row-reverse;
     align-items: center;
   }
-
   .hangman__canvas {
     width: 50%;
     height: 50vw;
   }
-
   .hangman__content {
     width: 50%;
     height: auto;
@@ -298,73 +260,58 @@ a:focus {
     font-size: 0.9em;
     padding: 1em;
   }
-
   .hangman__header {
     text-align: right;
   }
-
   .hangman__title {
     font-size: 4em;
   }
-
   .keyboard__item {
     font-size: 1.4em;
     margin: 0.35em;
     padding: 0.3em;
   }
 }
-
 @media screen and (min-width: 768px) {
   .hangman__title {
     font-size: 5em;
   }
-
   .message__wrapper {
     min-width: 500px;
     padding: 2.5em;
   }
-
   .message__title {
     font-size: 3em;
   }
-
   .keyboard {
     width: 450px;
     border-top-left-radius: 1.3em;
   }
-
   .keyboard__item {
     font-size: 1.4em;
   }
-
   .keyboard__button--close {
     font-size: 2em;
   }
 }
-
 @media screen and (min-width: 992px) {
   .hangman__canvas {
     height: 40vw;
   }
-
   .hangman__content {
     padding: 1.5em 2.5em;
   }
-
   .hangman__title {
     font-size: 6.5em;
   }
-
   .hangman__word {
     margin-top: 4em;
   }
-
   .word__letter {
     width: 30px;
     margin-left: 8px;
     font-size: 1.6em;
   }
-
   .hangman__letters {
     font-size: 1.5em;
     margin-top: 1em;
