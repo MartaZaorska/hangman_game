@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#151515" />
+    <meta name="description" content="The popular hangman game." />
+    <title>Hangman Game</title>
+    <link rel="manifest" href="manifest.json" />
+    <link rel="shortcut icon" href="./images/icons/app-icon-32x32.png" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
+      integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.min.css" />
+  </head>
+  <body>
+    <div class="message">
+      <div class="message__wrapper">
+        <div class="message__content"></div>
+        <button id="reset-game" class="hangman__button">Play Again</button>
+      </div>
+    </div>
+    <main class="main">
+      <section class="hangman__content">
+        <header class="hangman__header">
+          <h1 class="hangman__title">
+            <span class="text__gradient">HangMan</span>
+          </h1>
+          <button class="hangman__button" id="start-game">New Game</button>
+        </header>
+        <section class="hangman__word"></section>
+        <p class="hangman__letters"></p>
+      </section>
+      <section class="hangman__canvas">
+        <canvas id="canvas"></canvas>
+      </section>
+    </main>
+    <div class="keyboard">
+      <button id="keyboard-close" class="keyboard__button--close">
+        &times;
+      </button>
+      <div class="keyboard__content"></div>
+    </div>
+    <button id="keyboard-open" class="keyboard__button">
+      <i class="far fa-keyboard"></i>
+    </button>
+    <script src="bundle.js"></script>
+  </body>
+</html>
